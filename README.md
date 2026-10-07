@@ -169,7 +169,7 @@ http는 로그인을 해도 다음으로 넘어가면 로그인 정보를 기억
 
 ## 목적
 회원가입까지 최대한 직접 만들어 보고 JPA버리고 myBatis로 MySQL 연동하기
-
+로그인 구현
 ---
 
 ## 배운것
@@ -181,3 +181,10 @@ mapper도 인터페이스인데 mysql과 연결하기 위해선 .xml 파일을 �
 이 방법에 대해 설명을 하자면
 .xml엔 mapper에 있는 메서드 안에 sql문을 작성해야하고 태그 규칙이 담겨있는 링크를 넣어야함
 또 mysql에 매핑하기 위해선 환경변수가 담겨있는 application.properties에 나의 mysql 링크와 이름, 비번까지 넣어야함
+
+controller에서 login 부분에 ```java HttpServletRequest request```란 파라미터를 넣는다 (요청 받을때 정보를 함께 받아옴)
+그리고 ```java HttpSession session = request.getSession();```을 사용 함으로서 세션을 생성하고 변수에 넣는다
+
+``` java session.setAttribute("memberId",memberId);```
+그 다음 로그인한 id를 세션에 연결시켜서 판별 가능하게함 
+그리고 getsession 만들때 쿠키도 만들어서 마지막에 웹브라우저로 보내줌
