@@ -246,3 +246,48 @@ ai를 통해 프론트 엔드를 만들었을때 url 연동이 잘못되어있�
 
 ---
 ## 목적
+
+jwt(토큰) 방법으로 로그인 만들어보기
+
+---
+## 배운 것
+
+토큰은 로그인할때 한번 발급받는다 
+그 후 사용자가 토큰을 보내면 서버가 제대로된 토큰이 맞고 사용자가 누구인지 알아냄으로써
+HTTP 무상태성을 극복할 수 있다.
+
+세션은 서버가 로그인 정보를 저장하지만
+JWT는 서버가 아무것도 저장하지 않고
+토큰 자체가 정보를 들고 다닌다.
+  
+토큰은 Header - Payload - signature로 이루어져 있다
+
+Header는 토큰을 만들때 어떤 알고리즘을 썼는지가 있다.
+Payload엔 사용자 정보가 있다. memberId, issuedAt 같은것들
+signature엔 header와 payload securityKey가 해시 되어 들어있다
+
+``` java
+public String createToken(Long memberId){
+        return Jwts.builder()
+                .claim("memberId",memberId)
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + expirationTime))
+                .signWith(securityKey)
+                .compact();
+    }
+```
+header는 자동으로 만들어져 있음
+payload는 .claim, .issuedAt, .expiration
+signature은 signWith를 쓸 시 만들어짐
+이거를 .compact해서 토큰 생성!
+
+jwt 방식은 로그인 할때 딱 한번 토큰을 생성하고
+filter를 이용하여 여러번 코드를 안써도 되게 할 수 있다
+
+OncePerRequestFilter를 상속하여 doFilterInternal을 오버라이드 해야 필터 기능을 할 수 있음
+
+HttpRequest 받아서 토큰 받기 -> 토큰 memberId로 바꾸기 -> Spring Security가 이해할 수 있게 정해진 클래스 UsernamePasswordAuthenticationToken을 사용해 인증 받기
+-> SecurityContextHolder에 등록해서 Spring Security가 이사람은 로그인된 사람이란걸 알게 해준다.
+이런식으로 이루어져 있다
+
+securityconfig에 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class); 이걸 넣음으로써 필터가 적용되게 했다
