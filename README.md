@@ -291,3 +291,8 @@ HttpRequest 받아서 토큰 받기 -> 토큰 memberId로 바꾸기 -> Spring Se
 이런식으로 이루어져 있다
 
 securityconfig에 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class); 이걸 넣음으로써 필터가 적용되게 했다
+
+## 에러
+@RequiredArgsConstructor를 사용해 매개변수를 받는 생성자를 만드는데
+실행할때 그 매개변수에 있는게 spring 컨테이너에 들어가있어야한다 
+하지만 filter만들때 @component 안써서 컨테이너에 안들어가서 오류생김
