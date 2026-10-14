@@ -302,3 +302,19 @@ securityconfig에 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilt
 
 로그인 시스템을 다 만들었으므로 스프링부트 새 레파지토리를 만들거다
 레파지토리를 너무 많이 만들어서 폴더에 넣을거임
+
+---
+# 7일차
+
+---
+## 목적 
+레파지토리 만들고 스프링 구조 이해 하기
+
+---
+## 배운 것
+
+서버를 시작하면 tomcat(was)가 켜지고 Spring이 어노테이션을 스캔함
+그리고 url -메서드 매핑표를 만들고 매핑표를 서블릿에 등록
+url 요청이 들어올때 tomcat이 요청을 받고 서블렛한테 넘기고 알맞은 메서드로 안내를 해준 후 실행
+tomcat은 모든 과정이 돌아가는 엔진 역할을 한다
+
