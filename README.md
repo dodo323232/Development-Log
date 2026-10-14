@@ -296,3 +296,9 @@ securityconfig에 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilt
 @RequiredArgsConstructor를 사용해 매개변수를 받는 생성자를 만드는데
 실행할때 그 매개변수에 있는게 spring 컨테이너에 들어가있어야한다 
 하지만 filter만들때 @component 안써서 컨테이너에 안들어가서 오류생김
+
+---
+## 다음에 할 것
+
+로그인 시스템을 다 만들었으므로 스프링부트 새 레파지토리를 만들거다
+레파지토리를 너무 많이 만들어서 폴더에 넣을거임
