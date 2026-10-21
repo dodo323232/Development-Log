@@ -318,3 +318,18 @@ securityconfig에 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilt
 url 요청이 들어올때 tomcat이 요청을 받고 서블렛한테 넘기고 알맞은 메서드로 안내를 해준 후 실행
 tomcat은 모든 과정이 돌아가는 엔진 역할을 한다
 
+---
+## 다음에 할 것
+
+게시판 만들기
+
+---
+# 8일차
+
+---
+## 목적
+게시판 CRUD 만들고
+프론트엔드 조금 공부해보기
+
+---
+## 배운 것
