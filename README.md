@@ -369,3 +369,26 @@ bridge는 윈도우랑 우분투랑 나란히 있는 구조여서 아이피 주�
 ## 다음에 할 것
 
 Docker 해보기
+
+---
+# 9일차
+
+---
+
+## 배운 것
+
+docker는 다른 컴퓨터에 환경설정을 그대로 옮겨주는거.
+그리고 가상환경을 실행하지 않고 필요한것만 커널에 붙여서 리소스 안잡아먹게 도와주는 역할을 한다
+
+docker는 
+docker file, image, container로 구성되어 있는데
+docker file엔 어떤 방식으로 환경을 설정할지 방법이 들어있고 image는 그 방밥을 통해 만든 결과물이다
+그 image를 통해 container를 만들 수 있다.
+
+그리고 docker는 클라이언트 - 서버 구조이다.
+
+docker run을 실행하면 docker deamon에서 이미지로 컨테이너를 통해 실행한다
+docker build는 docker file을 통해 image를 만든다
+docker pull은 다른사람이 만든 이미지를 registry에서 가져와 이미지를 얻는다
+
+--
