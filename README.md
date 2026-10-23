@@ -397,6 +397,23 @@ docker run, docker build, docker pull은 다 docker engine의 역할이다.
 docker가 가벼운 이유는 리눅스에 있는 chroot, namespace, cgroup을 조합해 하이퍼바이저가 필요 없게 만들어서 그렇다.
 하이퍼 자이저란 vmwrae같이 새로운 컴퓨터를 생성할 수 있게 도와주는거
 
+### docker 실행 병령어
+
+```java
+./gradlew clean build
+
+```
+
+```java
+docker build -t springboard-image .
+
+```
+
+```java
+docker run -d -p 8080:8080 springboard-image
+
+```
+
 ---
 
 그리고 또 다른 네트워크에서 내 사이트 들어오는 방법중
@@ -408,6 +425,16 @@ ngrok는 임의의 주소를 만들어서 다른 네트워크도 다 들어올 �
 맨 처음엔 포트 포워딩 방법을 쓰려고했으나 공유기 비번이 계속 틀려서 ngrok 방법을 택했다
 
 ngrok 하는 방법은 쉬웠다 토큰 설정하고 포트 연결이 끝이기 때문이다
+
+### 실행 명령어
+
+```java
+ngrok config add-authtoken "<YOUR_AUTHTOKEN>"
+```
+
+```java
+ngrok http 8080
+```
 
 ---
 
