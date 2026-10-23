@@ -397,4 +397,31 @@ docker run, docker build, docker pull은 다 docker engine의 역할이다.
 docker가 가벼운 이유는 리눅스에 있는 chroot, namespace, cgroup을 조합해 하이퍼바이저가 필요 없게 만들어서 그렇다.
 하이퍼 자이저란 vmwrae같이 새로운 컴퓨터를 생성할 수 있게 도와주는거
 
---
+---
+
+그리고 또 다른 네트워크에서 내 사이트 들어오는 방법중
+포트 포워딩, ngrok을 배웠다
+
+포트 포워딩은 공인 ip를 불러 특정 포트로 연결 됐을때 어떤 ip로 이동해야하는지 공유기 설정을 바꾸는 방법이였다
+ngrok는 임의의 주소를 만들어서 다른 네트워크도 다 들어올 수 있게 만드는 방법 이다
+
+맨 처음엔 포트 포워딩 방법을 쓰려고했으나 공유기 비번이 계속 틀려서 ngrok 방법을 택했다
+
+ngrok 하는 방법은 쉬웠다 토큰 설정하고 포트 연결이 끝이기 때문이다
+
+---
+
+## 오류 고치기
+
+하지만 ngrok으로 사이트를 열고 뜻밖의 문제가 발생을 했는데 바로 cors 오류였다 나는 static에 html을 넣어서 상대경로로 주소를 써서 이런 문제가 발생하지 않을 줄 알았는데 static 상대경로 방법은 브라우저 cors를 방지하는 방법이였고 spring security 즉 서버에서 cors 오류가 난거였다
+
+``` java
+config.setAllowedOrigins(List.of(
+                "http://localhost:63342",
+                "https://hungrily-elf-repossess.ngrok-free.dev"
+        ));
+        config.setAllowedOriginPatterns(List.of("*"));
+```
+이렇게 고침
+
+그리고 보통 공유기에는 AP 격리라고 같은 와이파이를 가진 사람들이 마음대로 그 ip에 접근 못하게 막는다는걸 알았다
