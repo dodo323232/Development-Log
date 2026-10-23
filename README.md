@@ -391,4 +391,10 @@ docker run을 실행하면 docker deamon에서 이미지로 컨테이너를 통�
 docker build는 docker file을 통해 image를 만든다
 docker pull은 다른사람이 만든 이미지를 registry에서 가져와 이미지를 얻는다
 
+docker file만 우리가 쓰고
+docker run, docker build, docker pull은 다 docker engine의 역할이다.
+
+docker가 가벼운 이유는 리눅스에 있는 chroot, namespace, cgroup을 조합해 하이퍼바이저가 필요 없게 만들어서 그렇다.
+하이퍼 자이저란 vmwrae같이 새로운 컴퓨터를 생성할 수 있게 도와주는거
+
 --
