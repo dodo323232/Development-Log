@@ -1,7 +1,7 @@
 # 개발일지
 
 <details>
-<summary> 1일차 </summary>
+<summary> ## 1일차 </summary>
 
 Service는 혼자서 DB 작업을 할 수 없기때문에 Repository가 반드시 필요한다.
 
@@ -63,7 +63,8 @@ SQL 자바 객체를 통역해주는 역할을함
 
 </details>
 
-# 2일차 개발 일지
+<details>
+  <summary> 2일차 </summary>
 ---
 ## 목적
 회원가입 로직에 암호화를 추가 할것임.
@@ -124,8 +125,10 @@ SecurityConfig
 회원가입 시스템에 암호화 과정까지 만들었기 때문에
 다음엔 로그인 시스템을 만들 것이다.
 
----
-# 3일차 개발 일지
+</details>
+
+<details>
+<summary> 3일차 </summary>
 
 ---
 ## 목적
@@ -162,9 +165,11 @@ http는 로그인을 해도 다음으로 넘어가면 로그인 정보를 기억
 
 레파지토리 따로 만들어서 로그인 기능 제대로 공부하기
 
----
+</details>
 
-## 4일차 개발일지
+
+<details>
+<summary> 4일차 개발일지 </summary>
 
 ---
 
@@ -206,8 +211,10 @@ session.setAttribute("memberId",memberId);
 
 프론트 엔드 연결해보기
 
----
-# 5일차
+</details>
+
+<details>
+<summary> 5일차 </summary>
 
 ---
 
@@ -242,8 +249,10 @@ ai를 통해 프론트 엔드를 만들었을때 url 연동이 잘못되어있�
 ## 다음에 할 것
 로그인 세션 쿠키 방법을 토큰(JWT) 방식으로 바꿔볼 것이다
 
----
-# 6일차
+</details>
+
+<details>
+<summary> 6일차 </summary>
 
 ---
 ## 목적
@@ -304,8 +313,10 @@ securityconfig에 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilt
 로그인 시스템을 다 만들었으므로 스프링부트 새 레파지토리를 만들거다
 레파지토리를 너무 많이 만들어서 폴더에 넣을거임
 
----
-# 7일차
+</details>
+
+<details>
+<summary> 7일차 </summary>
 
 ---
 ## 목적 
@@ -324,8 +335,11 @@ tomcat은 모든 과정이 돌아가는 엔진 역할을 한다
 
 게시판 만들기
 
----
-# 8일차
+</details>
+
+<details>
+
+<summary> 8일차 </summary>
 
 ---
 ## 목적
@@ -371,8 +385,11 @@ bridge는 윈도우랑 우분투랑 나란히 있는 구조여서 아이피 주�
 
 Docker 해보기
 
----
-# 9일차
+</details>
+
+<details>
+  
+<summary> 9일차 </summary>
 
 ---
 
@@ -454,10 +471,14 @@ config.setAllowedOrigins(List.of(
 
 그리고 보통 공유기에는 AP 격리라고 같은 와이파이를 가진 사람들이 마음대로 그 ip에 접근 못하게 막는다는걸 알았다
 
----
-# 10일차
+</details>
+
+<details>
+
+  <summary> 10일차 </summary>
 
 ---
 
 ## 목적
 
+</details>
